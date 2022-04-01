@@ -8,51 +8,51 @@ int main(void)
     double Max1(double x, double y);
     double Max1(double x, double y, double z);
     int choice;
-    cout << "你想求几个数的最大值(输入 2 或 3): ";
+    cout << "How many numbers do you want to compare?(enter 2 or 3): ";
     cin >> choice;
     switch (choice)
     {
     case 2:
         int type;
-        cout << "整数的最大值还是浮点数的最大值(输入 1 求整数 输入 2 求浮点数): ";
+        cout << "the max of integer or max of real numbers(1 for integer, 2 for real numbers): ";
         cin >> type;
         if (type == 1)
         {
             int a, b;
-            cout << "输入两个整数: " << endl;
+            cout << "Please enter two integers: " << endl;
             cin >> a >> b;
-            cout << "最大值 max = " << Max1(a, b) << endl;
+            cout << "max = " << Max1(a, b) << endl;
         }
         if (type == 2)
         {
             double a, b;
-            cout << "输入两个浮点数: " << endl;
+            cout << "Please enter two real numbers: " << endl;
             cin >> a >> b;
-            cout << "最大值 max = " << Max1(a, b) << endl;
+            cout << "max = " << Max1(a, b) << endl;
         }
         break;
     case 3:
         int typ;
-        cout << "整数的最大值还是浮点数的最大值(输入 1 求整数 输入 2 求浮点数): ";
+        cout << "the max of integer or max of real numbers(1 for integer, 2 for real numbers): ";
         cin >> typ;
         if (typ == 1)
         {
             int a, b, c;
-            cout << "输入三个整数: " << endl;
+            cout << "Please enter three integers: " << endl;
             cin >> a >> b >> c;
-            cout << "最大值 max = " << Max1(a, b, c) << endl;
+            cout << "max = " << Max1(a, b, c) << endl;
         }
         if (typ == 2)
         {
             double a, b, c;
-            cout << "输入三个浮点数: " << endl;
+            cout << "Please enter three real numbers: " << endl;
             cin >> a >> b >> c;
-            cout << "最大值 max = " << Max1(a, b, c) << endl;
+            cout << "max = " << Max1(a, b, c) << endl;
         }
         break;
     
     default:
-        cout << "输入错误!" << endl;
+        cout << "Input error!" << endl;
         break;
     }
 
