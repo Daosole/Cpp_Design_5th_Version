@@ -9,7 +9,7 @@ int main(void)
     cin >> x >> y;
     re = pow(x, y);
 
-    cout << "The result is:" << re << endl;
+    cout << "The result of "<< x << "^" << y << " is:" << re << endl;
 
     return 0;    
 }
