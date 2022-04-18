@@ -1,30 +1,20 @@
-#include <cmath>
 #include <iostream>
 using namespace std;
+const int n = 18;
 
 int main(void)
 {
-    int i, j, k, flag;
-    i = 2;
-    while (i <= 100)
+    int m = 0;
+    while (m != n)
     {
-        flag = 1;
-        k = sqrt(i);
-        j = 2;
-        while (j <= k)
-        {
-            if (i % j == 0)
-            {
-                flag = 0;
-                break;
-            }
-            j++;
-        }
-        if (flag)
-        {
-            cout << i << "是质数." << endl;
-        }
-        i++;
+        cout << "请猜这个数的值是为多少?(0 ~ 100): ";
+        cin >> m;
+        if (n > m)
+            cout << "你猜的值太小了!" << endl;
+        else if (n < m)
+            cout << "你猜的值太大了!" << endl;
+        else
+            cout << "你猜对了!" << endl;
     }
     return 0;
 }

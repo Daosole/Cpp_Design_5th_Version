@@ -1,27 +1,24 @@
+#include <iomanip>
 #include <iostream>
 using namespace std;
 
-struct Time
-{
-    int year;
-    int month;
-    int day;
-    int hour;
-    int minute;
-    int second;
-} t;
-
 int main(void)
 {
-    cout << "Please enter time(yyyy-mm-dd-hh-mm-ss):";
-    cin >> t.year;
-    cin >> t.month;
-    cin >> t.day;
-    cin >> t.hour;
-    cin >> t.minute;
-    cin >> t.second;
-    cout << "The time is:" << endl;
-    cout << t.year << "-" << t.month << "-" << t.day << " " << t.hour << ":" << t.minute << ":" << t.second << endl;
-
+    int i, j;
+    cout << ' ';
+    for (i = 1; i < 10; i++)
+    {
+        cout << setw(4) << i;
+    }
+    cout << endl;
+    for (i = 1; i < 10; i++)
+    {
+        cout << i;
+        for (j = 1; j < 10; j++)
+        {
+            cout << setw(4) << (i * j);
+        }
+        cout << endl;
+    }
     return 0;
 }

@@ -3,12 +3,23 @@ using namespace std;
 
 int main(void)
 {
-    unsigned int x;
-    unsigned int y = 100;
-    unsigned int z = 50;
-    x = y - z;
-    cout << "Diffenerce is:" << x << endl;
-    x = z - y;
-    cout << "\nNow difference is: " << x << endl;
+    int myAge = 39;
+    int yourAge = 39;
+    cout << "I am: " << myAge << " years old.\n";
+    cout << "You are: " << yourAge << " years old.\n";
+    myAge++;
+    ++yourAge;
+    cout << "One year passes..." << endl;
+    cout << "I am: " << myAge << " years old.\n";
+    cout << "You are: " << yourAge << " years old.\n";
+
+    cout << "Another year passes." << endl;
+    cout << "I am: " << myAge++ << " years old.\n";
+    cout << "You are: " << ++yourAge << " years old.\n";
+
+    cout << "Let's print it again." << endl;
+    cout << "I am: " << myAge << " years old.\n";
+    cout << "You are: " << yourAge << " years old.\n";
+
     return 0;
 }
