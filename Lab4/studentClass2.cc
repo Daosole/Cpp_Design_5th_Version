@@ -5,11 +5,11 @@ class Student
 {
   public:
     Student(int id, int ag, int cl = 2021); // 构造函数
-    Student(); // 默认构造函数
-    Student(Student &p);                 // 复制构造函数
+    Student();                              // 默认构造函数
+    Student(Student &p);                    // 复制构造函数
     void setInformation(int id, int ag, int cl);
     void showInformation();
-    ~Student() {}// 析构函数
+    ~Student() {} // 析构函数
 
   private:
     int idNo;
