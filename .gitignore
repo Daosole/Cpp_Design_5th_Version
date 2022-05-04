@@ -33,6 +33,8 @@
 
 # 自定义
 /Temp
+# 忽略所有文件夹下的 build 文件夹
+*build
 
 # CMake gitignore
 
