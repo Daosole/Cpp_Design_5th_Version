@@ -30,7 +30,7 @@ class Date
     };
     ~Date()
     {
-        cout << "Date class Destructors work!"<< endl;
+        cout << "Date class Destructors work!" << endl;
     }
 };
 
@@ -92,7 +92,7 @@ void People::setInfo(int num, char s, Date bir, long id)
 
 int main(void)
 {
-    Date birth(1996,05,23);
+    Date birth(1996, 05, 23);
     Date b2;
     b2.setBrith();
     People a(4001, 'F', birth, 100110119120);
@@ -103,5 +103,4 @@ int main(void)
     a.show();
 
     return 0;
-
 }
