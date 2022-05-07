@@ -30,6 +30,7 @@ class Date
     };
     ~Date()
     {
+        cout << "Date class Destructors work!"<< endl;
     }
 };
 
@@ -60,6 +61,7 @@ class People
     void setInfo(int num, char s, Date bir, long id);
     ~People()
     {
+        cout << "People class Destructors work!" << endl;
     }
 };
 
