@@ -7,9 +7,7 @@ class Point
   public:
     Point();
     Point(int x, int y);
-    ~Point()
-    {
-    }
+    ~Point();
     void move(int newX, int newY);
     int getX() const
     {
