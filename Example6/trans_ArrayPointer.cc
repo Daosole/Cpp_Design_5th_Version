@@ -1,3 +1,4 @@
+// 使用数组指针进行简单矩阵的转置
 #include <iostream>
 #define R 4 // row 行
 #define C 3 // column 列
@@ -23,15 +24,6 @@ int main(void)
     cout << "After changed:" << endl;
     trans(a);
 
-    //    for (int i = 0; i < R; i++)
-    //    {
-    //        for (int j = 0; j < C; j++)
-    //        {
-    //            cout << "\t" << a[i][j];
-    //        }
-    //        cout << endl;
-    //    }
-
     return 0;
 }
 
@@ -46,7 +38,6 @@ void trans(int (*pointer)[3])
         }
     }
 
-    cout << "temp array:" << endl;
     for (int i = 0; i < C; i++)
     {
         for (int j = 0; j < R; j++)
