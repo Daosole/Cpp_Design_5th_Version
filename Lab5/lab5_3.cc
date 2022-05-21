@@ -1,3 +1,4 @@
+// 习题 5-7
 #include <iostream>
 using namespace std;
 
@@ -13,17 +14,17 @@ public:
     Cat(Cat &c);
     ~Cat()
     {
-        cout << "Destructor" << endl;
+        cout << "Destructor called" << endl;
     }
-    void showInital();
-    void add(int newC);
+    void showInital(); // 输出开始时有多少只猫
+    void add(int newC); // 添加猫的数量
     static int getNumOfCats()
     {
         return numOfCats;
     }
 };
 
-int Cat::numOfCats = 0;
+int Cat::numOfCats = 0; // 静态数据成员类外定义和初始化
 
 Cat::Cat(int Init) : inital(Init) {
     numOfCats = inital;
@@ -37,7 +38,7 @@ Cat::Cat(Cat &c)
 
 void Cat::showInital()
 {
-    cout << "The origin sum of cats:" << endl;
+    cout << "The origin amount of cats:" << endl;
     cout << inital << endl;
 }
 
