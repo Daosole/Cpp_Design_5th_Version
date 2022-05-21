@@ -5,10 +5,14 @@ using namespace std;
 int main(void)
 {
     Client a;
+    a.add(5);
+    Client::ChangeServerName('G');
     a.show();
-    a.ChangeServerName("test");
+    
     Client b(a);
+    b.add(12);
+    Client::ChangeServerName('D');
     b.show();
-    b.ChangeServerName("pla");
+
     return 0;
 }
