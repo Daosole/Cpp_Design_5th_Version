@@ -15,6 +15,6 @@ int main(void)
     s1 += s2;
 
     cout << "After Linked: " << endl;
-    cout << s1;
+    cout << s1 << endl;
     return 0;
 }
