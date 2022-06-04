@@ -7,9 +7,9 @@ int main(void)
     char s1[100], s2[50];
     cout << "Enter two strings: " << endl;
     cout << "String1: ";
-    cin >> s1;
+    cin.getline(s1,100);
     cout << "String2: ";
-    cin >> s2;
+    cin.getline(s2,50);
     int i = 0, j = 0;
     while (s2[j] != '\0')
     {
