@@ -1,7 +1,6 @@
 #include "employee.h"
 #include <iostream>
-#include <string.h>
-#include <string>
+#include <cstring>
 using namespace std;
 
 Employee::Employee(const char *name, const char *addr, const char *city, const char *zip, const char sex)
