@@ -11,9 +11,9 @@ class Employee
     char Sex;         // F or M 性别
 
   public:
-    Employee(char *name, char *addr, char *city, char *zip, char sex);
+    Employee(const char *name, const char *addr, const char *city, const char *zip, const char sex);
     ~Employee();
-    void change_name(char *name);
+    void change_name(const char *name);
     void display();
 };
 

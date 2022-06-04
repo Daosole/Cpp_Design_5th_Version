@@ -4,7 +4,7 @@
 #include <string>
 using namespace std;
 
-Employee::Employee(char *name, char *addr, char *city, char *zip, char sex)
+Employee::Employee(const char *name, const char *addr, const char *city, const char *zip, const char sex)
 {
     strcpy(Name, name);
     strcpy(Address, addr);
@@ -18,7 +18,7 @@ Employee::~Employee()
     cout << "Destructor called" << endl;
 }
 
-void Employee::change_name(char *name)
+void Employee::change_name(const char *name)
 {
     strcpy(Name, name);
 }
@@ -40,6 +40,7 @@ int main(void)
     a.change_name("rubys");
     cout << "Name After Changed: " << endl;
     a.display();
+    cout << endl;
 
     return 0;
 }
