@@ -15,7 +15,7 @@ class Base2 : public Base1 // 公有派生类 Base2 定义
   public:
     void display() const
     {
-        cout << "Base1::display()" << endl;
+        cout << "Base2::display()" << endl;
     }
 };
 
