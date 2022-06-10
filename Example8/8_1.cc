@@ -6,18 +6,18 @@ class Complex
 {
 public:
     Complex(double r = 0.0, double i = 0.0) : real(r), imag(i) {}
-    Complex operator+(const Complex &c2) const;
-    Complex operator-(const Complex &c2) const;
+    Complex operator+(const Complex &c2) const; // 运算符 + 重载成员函数
+    Complex operator-(const Complex &c2) const; // 运算符 - 重载成员函数
     void display() const;
 
 private:
-    double real;
-    double imag;
+    double real; // 实部
+    double imag; // 虚部
 };
 
 Complex Complex::operator+(const Complex &c2) const
 {
-    return Complex(real + c2.real, imag + c2.imag);
+    return Complex(real + c2.real, imag + c2.imag); // 创建一个临时无名对象作为返回值
 }
 
 Complex Complex::operator-(const Complex &c2) const
@@ -27,12 +27,12 @@ Complex Complex::operator-(const Complex &c2) const
 
 void Complex::display() const
 {
-    cout << "(" << real << ", " << imag << ")" << endl; 
+    cout << "(" << real << ", " << imag << ")" << endl;
 }
 
 int main()
 {
-    Complex c1(5,4), c2(2,10), c3;
+    Complex c1(5, 4), c2(2, 10), c3;
     cout << "c1= ";
     c1.display();
     cout << "c2= ";
