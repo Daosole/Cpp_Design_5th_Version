@@ -4,6 +4,7 @@
 using namespace std;
 double Account::total = 0;
 
+// Account 类的实现
 Account::Account(const Date &date, const std::string &id) : id(id), balance(0)
 {
     date.show();
@@ -29,6 +30,7 @@ void Account::error(const string &msg) const
     cout << "Error (#" << id << "):" << msg << endl;
 }
 
+// SavingsAccount 类的实现
 SavingsAccount::SavingsAccount(const Date &date, const string &id, double rate)
     : Account(date, id), rate(rate), acc(date, 0)
 {
@@ -60,6 +62,7 @@ void SavingsAccount::settle(const Date &date)
     acc.reset(date, getBalance());
 }
 
+// CreditAccount 类的实现
 CreditAccount::CreditAccount(const Date &date, const string &id, double credit, double rate, double fee)
     : Account(date, id), credit(credit), rate(rate), fee(fee), acc(date, 0)
 {
@@ -86,12 +89,12 @@ void CreditAccount::settle(const Date &date)
 {
     double interest = acc.getSum(date) * rate;
     if (interest != 0)
-        record(date, interest, "intereset");
+        record(date, interest, "interest");
     if (date.getMonth() == 1)
     {
         record(date, -fee, "annual fee");
-        acc.reset(date, getDebt());
     }
+    acc.reset(date, getDebt());
 }
 
 void CreditAccount::show() const
