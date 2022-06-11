@@ -8,7 +8,7 @@ public:
     virtual void display() const = 0; // 纯虚函数
 };
 
-class Base2: public Base1
+class Base2 : public Base1
 {
 public:
     void display() const; // 覆盖基类的虚函数
@@ -19,10 +19,10 @@ void Base2::display() const
     cout << "Base2::display()" << endl;
 }
 
-class Derived: public Base2
+class Derived : public Base2
 {
-    public:
-        void display() const;
+public:
+    void display() const;
 };
 
 void Derived::display() const
