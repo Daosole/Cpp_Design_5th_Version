@@ -2,7 +2,7 @@
 #include <cmath>
 
 // 被积函数
-double MyFunciton::operator()(double x) const
+double MyFunction::operator()(double x) const
 {
     return log(1.0 + x) / (1.0 + x * x);
 }
@@ -20,7 +20,7 @@ double Trapz::operator()(double a, double b, double eps) const
         double sum = 0;
         for (int k = 0; k < n; k++)
         {
-            doube x = a + (k + 0.5) * h;
+            double x = a + (k + 0.5) * h;
             sum += f(x);
         }
         t2n = (tn + h * sum) / 2.0; // 变步长梯形法计算

@@ -3,31 +3,35 @@
 
 class Function
 {
-public:
+  public:
     virtual double operator()(double x) const = 0; // 纯虚函数重载运算符()
-    virtual ~Function() {}
+    virtual ~Function()
+    {
+    }
 };
 
 class MyFunction : public Function
 {
-public:
+  public:
     virtual double operator()(double x) const; // 覆盖虚函数
 };
 
 class Integration // 抽象类定义
 {
-public:
+  public:
     virtual double operator()(double a, double b, double eps) const = 0;
-    virtual ~Integration() {}
+    virtual ~Integration()
+    {
+    }
 };
 
 class Trapz : public Integration
 {
-public:
+  public:
     Trapz(const Function &f) : f(f){};
     virtual double operator()(double a, double b, double eps) const;
 
-private:
+  private:
     const Function &f; // 私有对象 Function 类对象的指针
 };
 
