@@ -89,12 +89,12 @@ void CreditAccount::settle(const Date &date)
 {
     double interest = acc.getSum(date) * rate;
     if (interest != 0)
-        record(date, interest, "intereset");
+        record(date, interest, "interset");
     if (date.getMonth() == 1)
     {
         record(date, -fee, "annual fee");
-        acc.reset(date, getDebt());
     }
+    acc.reset(date, getDebt());
 }
 
 void CreditAccount::show() const
