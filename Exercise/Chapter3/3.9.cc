@@ -12,7 +12,7 @@ int main()
     if (prime(i))
         cout << i << " is a prime." << endl;
     else
-        cout << i << " is not a prime."  << endl;
+        cout << i << " is not a prime." << endl;
     return 0;
 }
 
@@ -28,7 +28,6 @@ int prime(int i)
             flag = 0;
             break;
         }
-
     }
     return flag;
 }

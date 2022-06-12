@@ -21,7 +21,7 @@ int main()
     answer = divide(one, two);
     if (answer > -1)
         cout << "Answer: " << answer;
-    else    
+    else
         cout << "Error, can't divide by zero!";
     return 0;
 }
