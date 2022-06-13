@@ -248,3 +248,111 @@ int main()
     return 0;
 }
 ```
+
+# 5-13
+```c++
+// 源文件
+#include <iostream>
+#include "myxyz.h"
+int main()
+{
+    X x;
+    Z z;
+    z.f(&x);
+    return 0;
+}
+
+// 头文件
+#ifndef MYXYZ_H
+
+class X;
+class Y
+{
+public:
+    void g(X *);
+};
+
+class X
+{
+private:
+    int i;
+
+public:
+    X() { i = 0; }
+    friend void h(X *);
+    friend void Y::g(X *);
+    friend class Z;
+};
+
+void h(X *x) { x->i += 10; }
+
+void Y::g(X *x) { x->i++; }
+
+class Z
+{
+public:
+    void f(X *x) { x->i += 5; }
+};
+
+#endif
+```
+
+# 5-14
+```c++
+#include <iostream>
+using namespace std;
+
+class Boat;
+class Car
+{
+private:
+    int weight;
+public:
+    Car(int j)
+    {
+        weight = j;
+    }
+    friend int getTotalWeight(Car &aCar, Boat &aBoat);
+};
+
+class Boat
+{
+private:
+    int weight;
+public:
+    Boat(int j)
+    {
+        weight = j;
+    }
+    friend int getTotalWeight(Car &aCar, Boat &aBoat);
+};
+
+int getTotalWeight(Car &aCar, Boat &aBoat)
+{
+    return aCar.weight + aBoat.weight;
+}
+
+int main()
+{
+    Car c1(4);
+    Boat b1(5);
+
+    cout << getTotalWeight(c1, b1) << endl;
+    return 0;
+}
+```
+
+# 5-15
+局部作用域中静态变量的特点是：它并不会随着每次函数调用而产生一个副本，也不会随着函数返回而失效，定义时未指定初值的基本类型静态生存期变量，会被以 0 值初始化；局部作用域中的全局变量诞生于声明点，结束于声明所在的块执行完毕之时，并且不指定初值意味着初值不确定。
+
+普通局部变量存放于栈区，超出作用域后，变量被撤销，其所占用的内存也被收回；静态局部变量存放于静态数据存储区，全局可见，但是作用域是局部作用域，超出作用域后变量仍然存在。
+
+# 5-16
+编译的输入文件是源文件，输出是目标文件；连接的输入文件是目标文件，输出是可执行文件。
+
+编译器对源代码进行编译，是将以文本形式存在的源代码翻译为机器语言形式的目标文件的过程。连接是将各个编译单元的目标文件和运行库当中被调用过的单元加以合并后生成的可执行文件的过程。
+
+1. 编译时报错，函数参数不匹配
+2. 连接错误，函数未定义
+3. 不报错
+4. 连接错误，函数重复定义
