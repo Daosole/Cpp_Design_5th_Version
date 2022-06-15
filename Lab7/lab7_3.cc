@@ -9,6 +9,7 @@ protected: // 声明为保护成员，可以让子类也访问这些数据成员
     char Grade; // 等级 S A B C D
 
 public:
+    vehicle() {}
     vehicle(int ms, double w, char g) : MaxSpeed(ms), Weight(w), Grade(g)
     {
         cout << "vehicle Constructor called" << endl;
@@ -26,7 +27,7 @@ public:
         cout << "\nThe data of vehicle:" << endl;
         cout << "MaxSpeed: " << MaxSpeed << "km/h" << endl;
         cout << "Weight: " << Weight << " Ton" << endl;
-        cout << "Grade: " << Grade << "\n\n";
+        cout << "Grade: " << Grade << endl;
     }
     void Run()
     {
@@ -44,6 +45,7 @@ protected:
     double Height;
 
 public:
+    bicycle() {}
     bicycle(int ms, double w, char g, double h) : vehicle(ms, w, g), Height(h)
     {
         cout << "bicycle constructor" << endl;
@@ -66,10 +68,9 @@ void bicycle::show()
     cout << "\nThe data of bicycle:" << endl;
     cout << "MaxSpeed: " << MaxSpeed << "km/h" << endl;
     cout << "Weight: " << Weight << " Ton" << endl;
-    ;
     cout << "Grade: " << Grade << endl;
     cout << "Height: " << Height << "m"
-         << "\n\n";
+         << endl;
 }
 
 class motorcar : virtual public vehicle
@@ -78,6 +79,7 @@ protected:
     int SeatNum;
 
 public:
+    motorcar() {}
     motorcar(int ms, double w, char g, int s) : vehicle(ms, w, g), SeatNum(s)
     {
         cout << "motorcar constructer" << endl;
@@ -97,15 +99,18 @@ public:
         cout << "Weight: " << Weight << " Ton" << endl;
         cout << "Grade: " << Grade << endl;
         cout << "SeatNum: " << SeatNum << "seats"
-             << "\n\n";
+             << endl;
     }
 };
 
 class motorcycle : public bicycle, public motorcar
 {
 public:
-    motorcycle(int ms, double w, char g, double h, int s) : vehicle(ms, w, g), bicycle(ms, w, g, h), motorcar(ms, w, g, s)
+    motorcycle(int ms, double w, char g, double h, int s) : vehicle(ms, w, g) 
     {
+        this->Height = h;
+        // Height = h;
+        this->SeatNum = s;
         cout << "motorcycle constructor" << endl;
     }
     void show();
@@ -119,7 +124,7 @@ void motorcycle::show()
     cout << "Weight: " << Weight << " Ton" << endl;
     cout << "Grade: " << Grade << endl;
     cout << "Height:" << Height << "m" << endl;
-    cout << "SeatNum: " << SeatNum << "seats" << "\n\n";
+    cout << "SeatNum: " << SeatNum << "seats" << endl;
 }
 
 void motorcycle::set(int ms, double w, char g, double h, int s)
@@ -138,11 +143,20 @@ int main()
 
     bicycle c1(90, 7.9, 'B', 1.9);
     c1.show();
+    c1.Run();
+    c1.Stop();
+    cout << endl;
 
     motorcar m1(100, 8.0, 'A', 5);
     m1.show();
+    m1.Run();
+    m1.Stop();
+    cout << endl;
     motorcycle mc(99, 10.2, 'S', 2.3, 7);
     mc.show();
+    mc.Run();
+    mc.Stop();
+    cout << endl;
 
     return 0;
 }
