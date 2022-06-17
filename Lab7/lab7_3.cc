@@ -106,12 +106,15 @@ public:
 class motorcycle : public bicycle, public motorcar
 {
 public:
-    motorcycle(int ms, double w, char g, double h, int s) : vehicle(ms, w, g) 
+    motorcycle(int ms, double w, char g, double h, int s) : vehicle(ms, w, g)
     {
         this->Height = h;
         // Height = h;
         this->SeatNum = s;
         cout << "motorcycle constructor" << endl;
+    }
+    ~motorcycle()
+    {
     }
     void show();
     void set(int ms, double w, char g, double h, int s);
