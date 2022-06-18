@@ -82,19 +82,19 @@ private:
     double length;
 
 public:
-    Square(double len)
+    Square(double len) : Rectangle(len,len)
     {
-        length = len;
+    
     }
     ~Square() { }
-    double getLen()
-    {
-        return length;
-    }
-    double getArea()
-    {
-        return length * length;
-    }
+    // double getLen()
+    // {
+    //     return length;
+    // }
+    // double getArea()
+    // {
+    //     return length * length;
+    // }
     void show()
     {
         cout << "The length of Square: " << getLen() << endl;
