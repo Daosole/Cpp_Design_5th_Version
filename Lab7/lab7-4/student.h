@@ -10,7 +10,7 @@ protected:
 public:
     Student();
     Student(char *na, char *nu, char *s, Date B, char *id, char *cn);
-    Student(Student &s);
+    Student(Student &);
     ~Student();
 
     void show();
