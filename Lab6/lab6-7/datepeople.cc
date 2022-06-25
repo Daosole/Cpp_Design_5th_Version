@@ -54,24 +54,21 @@ People::~People()
 
 void People::set()
 {
-    Date bir;
 
-    cout << "Enter Name: ";
+    cout << "Enter Name(10 length): ";
     cin >> name;
-    cout << "Enter Number: ";
+    cout << "Enter Number(6 length): ";
     cin >> number;
-    cout << "Enter Sex: ";
+    cout << "Enter Sex(F/M): ";
     cin >> sex;
     cout << "Enter birthday:" << endl;
-    bir.setBrith();
-    Birthday = bir;
-    cout << "Enter id: ";
+    Birthday.setBrith();
+    cout << "Enter id(15 length): ";
     cin >> id;
 }
 
 void People::show()
 {
-    cout << "*******The information*******" << endl;
     cout << "\tName: " << name << endl;
     cout << "\tNumber: " << number << endl;
     cout << "\tSex: " << sex << endl;
