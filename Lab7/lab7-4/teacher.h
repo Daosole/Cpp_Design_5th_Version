@@ -2,7 +2,7 @@
 #define _TEACHER_H_
 #include "people.h"
 
-class Teacher : virtual People
+class Teacher : virtual public People
 {
 protected:
     char principalship[11]; // 职务

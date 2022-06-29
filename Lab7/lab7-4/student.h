@@ -2,7 +2,7 @@
 #define _STUDENT_H_
 #include "people.h"
 
-class Student : virtual People
+class Student : virtual public People
 {
 protected:
     char classNO[7]; // 班号
