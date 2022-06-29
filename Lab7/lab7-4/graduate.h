@@ -12,7 +12,7 @@ protected:
 public:
     Graduate();
     Graduate(char *na, char *nu, char *s, Date B, char *id, char *sub, Teacher ad);
-    Graduate(Student &);
+    Graduate(Graduate &);
     ~Graduate();
 
     void show();
