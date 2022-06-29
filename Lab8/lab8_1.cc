@@ -28,8 +28,8 @@ void Point::show() const
 
 Point &Point::operator++()
 {
-    ++_x;
-    ++_y;
+    _x++;
+    _y++;
     return *this;
 }
 Point Point::operator++(int)
@@ -41,8 +41,8 @@ Point Point::operator++(int)
 
 Point &Point::operator--()
 {
-    --_x;
-    --_y;
+    _x--;
+    _y--;
     return *this;
 }
 Point Point::operator--(int)
